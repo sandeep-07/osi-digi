@@ -18,13 +18,17 @@ function Product({ image, price, desc, name, id, subtitle }) {
         to={"/product/" + id}
         style={{ textDecoration: "none", color: "inherit" }}
       >
-        <Card className='m-2 card' style={{ borderRadius: "10px" }}>
+        <Card
+          className='m-2 card'
+          style={{ borderRadius: "10px", background: "#13181f", color: "#fff" }}
+        >
           <CardImg
             top
             width='100%'
             height='250px'
             src={image}
             alt='Card image cap'
+            style={{ padding: "20px" }}
           />
           <CardBody>
             <CardText style={{ fontWeight: "700", fontSize: "25px" }}>

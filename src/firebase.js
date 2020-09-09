@@ -1,17 +1,18 @@
-import firebase from "firebase"
+import firebase from "firebase";
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyDG3LV5t1C0EZwyC85Qhrl7TjhPSDXp5u4",
-  authDomain: "shop-ebuy.firebaseapp.com",
-  databaseURL: "https://shop-ebuy.firebaseio.com",
-  projectId: "shop-ebuy",
-  storageBucket: "shop-ebuy.appspot.com",
-  messagingSenderId: "20223141564",
-  appId: "1:20223141564:web:add83b931b4686d59592b9",
-  measurementId: "G-034ENJ8PXX"
+  apiKey: "AIzaSyBF5Lli53i-NTEFslxyHD8CDZ1yPnrB6B4",
+  authDomain: "ins2-896a2.firebaseapp.com",
+  databaseURL: "https://ins2-896a2.firebaseio.com",
+  projectId: "ins2-896a2",
+  storageBucket: "ins2-896a2.appspot.com",
+  messagingSenderId: "412680650971",
+  appId: "1:412680650971:web:a30748b66eb9acdfdb4cfe",
+  measurementId: "G-38FNDBBGWE",
 });
 
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
+const storage = firebase.storage();
 
-export { db, auth }
+export { db, auth, storage };

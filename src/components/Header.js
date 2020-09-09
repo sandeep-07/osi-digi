@@ -49,11 +49,16 @@ const Example = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className='ml-auto' navbar>
             <NavItem>
+              <Link to='/cart'>
+                <span className='text-white'>My Cart</span>
+                <FaShoppingCart style={{ color: "#61ff4e" }} className='mx-1' />
+                <span className='text-white'>{basket?.length}</span>
+              </Link>
               <Link to={!user && "/login"}>
                 <span onClick={logout}>
                   <span className='text-white mx-5'>
                     <span className='mx-1'>
-                      {user ? user.email + " Sign out " : "Sign In"}
+                      {user ? user.displayName + " Sign out " : "Sign In"}
                     </span>
                     <BsFillPersonFill
                       className=''
@@ -61,11 +66,6 @@ const Example = (props) => {
                     />
                   </span>
                 </span>
-              </Link>
-              <Link to='/cart'>
-                <span className='text-white'>My Cart</span>
-                <FaShoppingCart style={{ color: "#61ff4e" }} className='mx-1' />
-                <span className='text-white'>{basket?.length}</span>
               </Link>
             </NavItem>
           </Nav>

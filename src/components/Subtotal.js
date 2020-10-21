@@ -2,6 +2,7 @@ import React from "react";
 import { useStateValue } from "../StateProvider";
 import { getBasketTotal } from "../reducer";
 import CurrencyFormat from "react-currency-format";
+import {Link} from "react-router-dom"
 
 function Subtotal() {
   const [{ basket }, dispatch] = useStateValue();
@@ -26,7 +27,10 @@ function Subtotal() {
         displayType={"text"}
         prefix={"$"}
       />
-      <button>Proceed to checkout</button>
+      <Link to="/checkout">
+        <button>Proceed to checkout</button>
+      </Link>
+      
     </div>
   );
 }

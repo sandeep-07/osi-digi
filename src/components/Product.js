@@ -32,7 +32,7 @@ function Product({ image, price, desc, name, id, subtitle }) {
           />
           <CardBody>
             <CardText style={{ fontWeight: "700", fontSize: "25px" }}>
-              {price}
+              $ {price}
             </CardText>
             <CardTitle>{name}</CardTitle>
           </CardBody>

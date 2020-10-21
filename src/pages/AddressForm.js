@@ -1,34 +1,39 @@
-import React, { useState } from "react";
-import Review from "./Review";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
+import React,{useState} from 'react';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Review from "./Review"
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  listItem: {
+    padding: theme.spacing(1, 0),
+  },
+  total: {
+    fontWeight: 700,
+  },
+  title: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 export default function AddressForm() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    address1: "",
-    address2: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    country: "",
+    const [formData, setFormData] = useState({
+    fname: "",
+    address:"",
+    city:"",
+    state:"",
+    zip:"",
+    country:"",
   });
-  const {
-    firstName,
-    lastName,
-    address1,
-    address2,
-    city,
-    state,
-    zipCode,
-    country,
-  } = formData;
+  const { fname,lname,address,city,zip,country } = formData;
+  const classes = useStyles();
+
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  
   return (
     <React.Fragment>
       <Typography variant='h6' gutterBottom>
@@ -38,47 +43,34 @@ export default function AddressForm() {
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id='firstName'
-            name='firstName'
-            label='First name'
+            id='fname'
+            name='fname'
+            label='First Name'
             fullWidth
-            autoComplete='given-name'
-            value={firstName}
+            value={fname}
             onChange={(e) => onChange(e)}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id='lastName'
-            name='lastName'
-            label='Last name'
+            id='lname'
+            name='lname'
+            label='Last Name'
             fullWidth
-            autoComplete='family-name'
-            value={lastName}
+            value={lname}
             onChange={(e) => onChange(e)}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             required
-            id='address1'
-            name='address1'
+            id='address'
+            name='address'
             label='Address line 1'
             fullWidth
             autoComplete='shipping address-line1'
-            value={address1}
-            onChange={(e) => onChange(e)}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            id='address2'
-            name='address2'
-            label='Address line 2'
-            fullWidth
-            autoComplete='shipping address-line2'
-            value={address2}
+            value={address}
             onChange={(e) => onChange(e)}
           />
         </Grid>
@@ -96,15 +88,16 @@ export default function AddressForm() {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            id='state'
-            name='state'
-            label='State/Province/Region'
+            required
+            id='zip'
+            name='zip'
+            label='Zip / Postal code'
             fullWidth
-            value={state}
+            autoComplete='shipping postal-code'
+            value={zip}
             onChange={(e) => onChange(e)}
           />
         </Grid>
-
         <Grid item xs={12} sm={6}>
           <TextField
             required
@@ -117,16 +110,17 @@ export default function AddressForm() {
             onChange={(e) => onChange(e)}
           />
         </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={
-              <Checkbox color='secondary' name='saveAddress' value='yes' />
-            }
-            label='Use this address for payment details'
-          />
+      </Grid>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6}>
+          <Typography variant="h6" gutterBottom className={classes.title}>
+            Shipping
+          </Typography>
+          <Typography gutterBottom>{fname} {lname}</Typography>
+          <Typography gutterBottom>{address}</Typography>
         </Grid>
       </Grid>
-      <Review formData={formData} />
+
     </React.Fragment>
   );
 }

@@ -1,4 +1,4 @@
-/*import React from "react";
+import React from "react";
 import { UncontrolledCarousel } from "reactstrap";
 
 const items = [
@@ -34,8 +34,8 @@ export default Example;
 
 
 
-*/
 
+/*
 import React, { useState } from "react";
 import {
   Carousel,
@@ -132,3 +132,4 @@ const Example = (props) => {
 };
 
 export default Example;
+*/

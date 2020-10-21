@@ -12,15 +12,19 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { auth } from "../firebase";
+import { auth,db} from "../firebase";
 import { useHistory } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
+import "./Register.css"
+import { BorderInner } from "@material-ui/icons";
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    color: "white",
+    color: "black",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -34,20 +38,41 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  
 }));
 
 export default function SignUp() {
   const history = useHistory();
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password:"",
+    contact:"",
+    city:"",
+    favourites:"",
+    description:"",
+    workplace:"",
+  })
+
+  const { username, email, password, contact,city,favourites,description,workplace } = formData;
+
+  const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
   const classes = useStyles();
   const register = (e) => {
     e.preventDefault();
+    // auth.createUserWithEmailAndPassword(email, password).then(cred=>{
+    //   db.collection('users').doc(cred.user.uid).set(formData)
+    //   }).then(()=>{
+    //     history.push("/");
+    //   })
+    //   .catch((e) => alert(e.message));
 
-    auth
+      auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
+        db.collection('users').doc(auth.user.uid).set(formData)
         auth.user.updateProfile({
           displayName: username,
         });
@@ -56,41 +81,14 @@ export default function SignUp() {
       })
       .catch((e) => alert(e.message));
   };
-
   return (
     <Container maxWidth='xs'>
       <div className={classes.paper}>
-        {/* <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar> */}
         <Typography component='h1' variant='h5'>
           Sign up
         </Typography>
         <form noValidate>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete='fname'
-                name='firstName'
-                variant='outlined'
-                required
-                fullWidth
-                id='firstName'
-                label='First Name'
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant='outlined'
-                required
-                fullWidth
-                id='lastName'
-                label='Last Name'
-                name='lastName'
-                autoComplete='lname'
-              />
-            </Grid>
             <Grid item xs={12}>
               <TextField
                 variant='outlined'
@@ -101,7 +99,7 @@ export default function SignUp() {
                 name='username'
                 autoComplete='lname'
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => onChange(e)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -114,7 +112,7 @@ export default function SignUp() {
                 name='email'
                 autoComplete='email'
                 value={email}
-                onChange={(event) => setEmail(event.target.value)}
+                onChange={(e) => onChange(e)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -128,10 +126,67 @@ export default function SignUp() {
                 id='password'
                 autoComplete='current-password'
                 value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                onChange={(e) => onChange(e)}
               />
             </Grid>
           </Grid>
+          <div className="c">
+            <TextField
+              variant='outlined'
+              required
+              halfWidth
+              id='contact'
+              label='Contact'
+              name='contact'
+              autoComplete='contact'
+              value={contact}
+              onChange={(e) => onChange(e)}
+            />
+            <TextField
+              variant='outlined'
+              required
+              halfWidth
+              id='city'
+              label='City'
+              name='city'
+              autoComplete='city'
+              value={city}
+              onChange={(e) => onChange(e)}
+            />
+            <TextField
+              variant='outlined'
+              required
+              halfWidth
+              id='favourites'
+              label='favourites'
+              name='favourites'
+              autoComplete='favourites'
+              value={favourites}
+              onChange={(e) => onChange(e)}
+            />
+            <TextField
+              variant='outlined'
+              required
+              halfWidth
+              id='description'
+              label='description'
+              name='description'
+              autoComplete='description'
+              value={description}
+              onChange={(e) => onChange(e)}
+            />
+            <TextField
+              variant='outlined'
+              required
+              halfWidth
+              id='workplace'
+              label='workplace'
+              name='workplace'
+              autoComplete='workplace'
+              value={workplace}
+              onChange={(e) => onChange(e)}
+            />
+           </div>
           <Button
             type='submit'
             fullWidth

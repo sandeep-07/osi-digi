@@ -9,12 +9,11 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Discover from "./pages/Discover";
 import "./App.css";
-
 import Header from "./components/Header";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
+import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
-import Review from "./pages/Review";
 function App() {
   const [{ user }, dispatch] = useStateValue();
 
@@ -55,8 +54,8 @@ function App() {
           <Route exact path='/product/:id' component={ProductDisp} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
+          <Route exact path='/contact' component={Contact} />
           <Route exact path='/checkout' component={Checkout} />
-          <Route exact path='/review' component={Review} />
           <Route exact path='/discover'>
             <Header />
             <Discover />

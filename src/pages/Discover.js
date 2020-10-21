@@ -63,13 +63,10 @@ export default function SpringModal() {
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
-
   const [posts, setPosts] = useState([]);
-
   useEffect(() => {
     db.collection("posts")
       .orderBy("timestamp", "desc")

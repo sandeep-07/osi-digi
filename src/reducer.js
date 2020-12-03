@@ -20,7 +20,11 @@ const reducer = (state, action) => {
         ...state,
         basket: [...state.basket, action.item],
       };
-      break;
+    case "EMPTY_BASKET":
+      return {
+        ...state,
+        basket:[]
+      }
     case "REMOVE_FROM_BASKET":
       //Logic to remove item
       //we cloned the basket

@@ -46,7 +46,8 @@ function ProductDisp({ match }) {
     });
 
   return (
-    <div style={{ background: "#13181f" }}>
+    // style={{ background: "#13181f" }}
+    <div >
       <Header />
       {console.log(basket)}
       <div

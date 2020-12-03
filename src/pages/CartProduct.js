@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import "./CartProduct.css"
 import {useStateValue} from "../StateProvider"
 
-function CartProduct({image,price,id,name,subtitle}) 
+function CartProduct({image,price,id,name,subtitle,hideButton}) 
 
 {
   console.log(name)
@@ -28,13 +28,12 @@ function CartProduct({image,price,id,name,subtitle})
             <h6 className="mt-2">{name}</h6>
             <p>{subtitle}</p>
             <p><span className="bd">Price</span>{price}</p>
-            <Button color="secondary" variant="contained" onClick={remove}>Remove from cart</Button>
-
+            {hideButton&&<Button color="secondary" variant="contained" onClick={remove}>Remove from cart</Button>}
+            
           </Col>
         </Row>
       </div>
       </Container>
-      
 
   )
 }

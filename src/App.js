@@ -14,6 +14,14 @@ import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
+import Payment from "./pages/Payment";
+
+import Orders from "./pages/Orders"
+import {loadStripe} from "@stripe/stripe-js"
+import {Elements} from "@stripe/react-stripe-js"
+
+const promise=loadStripe("pk_test_51HtqcoILO5wYEeKPpQY6UD433VfSUD81oFqfqghBdqnVh73lMAU4r0KfyiOCwtgFYreWBI4mfZCEoGAO6ZFHqxnk008ZtBOCVE")
+
 function App() {
   const [{ user }, dispatch] = useStateValue();
 
@@ -43,8 +51,12 @@ function App() {
     <div className='App'>
       <Router>
         <Switch>
-          <Route exact path='/'>
+          <Route path='/orders'>
             <Header />
+            <Orders/>
+          </Route>
+          <Route exact path='/'>
+          <Header />
             <Home />
           </Route>
           <Route exact path='/cart'>
@@ -59,6 +71,12 @@ function App() {
           <Route exact path='/discover'>
             <Header />
             <Discover />
+          </Route>
+          <Route exact path='/payment'>
+            <Header />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
           </Route>
           <Route exact path='*' component={NotFound} />
           <Route exact path='/nf' component={NotFound} />

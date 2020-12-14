@@ -100,8 +100,8 @@ export default function SpringModal() {
         >
           <Fade in={open}>
             <div className={classes.paper}>
-              {user?.displayName ? (
-                <GameCreate username={user.displayName} />
+              {user?.email ? (
+                <GameCreate username={user.username} />
               ) : (
                 <h3>Sorry...Log in to creat game</h3>
               )}

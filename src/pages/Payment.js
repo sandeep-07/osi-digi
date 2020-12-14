@@ -9,7 +9,6 @@ import CurrencyFormat from "react-currency-format"
 import {getBasketTotal} from "../reducer"
 import { useHistory } from "react-router-dom";
 import {db} from "../firebase"
-
 function Payment() {
   const history = useHistory();
   const [{ basket,user}, dispatch] = useStateValue();
@@ -18,6 +17,8 @@ function Payment() {
   const [processing,setProcessing]=useState("")
   const [succeeded,setSucceeded]=useState(false)
   const [clientSecret,setClientSecret]=useState("")
+  //const [{ basket, user }, dispatch] = useStateValue();
+  const [address,setAddress]=useState("")
 
   useEffect(() => {
     // generate speacial stripe secret which allows us to charge a customer
@@ -67,6 +68,21 @@ function Payment() {
     setDisabled(event.empty)
     setError(event.error?event.error.message:"")
   }
+  
+
+  user?(
+    db
+    .collection("users")
+    .doc(user.uid)
+    .get()
+    .then((docRef) => {
+      // console.log(user)
+      setAddress(docRef.data().address)
+    })
+    .catch((error) => { })):console.log("USER DOES not exists")
+
+    console.log(address)
+  
 
   return (
     <div className="payment">
@@ -83,9 +99,7 @@ function Payment() {
             <h3>Delivery address</h3>
           </div>
           <div className="payment__address">
-            <p>User's email</p>
-            <p>123 React Lane</p>
-            <p>LOS Angeles CA</p>
+            <h5>{address}</h5>
           </div>
         </div>
         <div className="payment__section">

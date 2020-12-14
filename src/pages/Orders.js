@@ -7,6 +7,7 @@ function Orders() {
 
   const [{basket,user},dispatch]=useStateValue()
   const [orders,setOrders]=useState()
+  const [address,setAddress]=useState("")
 
   useEffect(()=>{
     if(user)
@@ -29,13 +30,23 @@ function Orders() {
     }
   },[user])
 
+  user?(
+    db
+    .collection("users")
+    .doc(user.uid)
+    .get()
+    .then((docRef) => {
+      setAddress(docRef.data().workplace)
+    })
+    .catch((error) => { })):console.log("USER DOES not exists")
+
   return (
-    <div className="orders">
+    <div className="grey lighten-5 orders">
       <h1>Your orders</h1>      
 
       <div className="orders__order">
         {orders?.map(order=>(
-          <Order order={order} />
+          <Order order={order} ad={address} />
         ))}
       </div>
     </div>

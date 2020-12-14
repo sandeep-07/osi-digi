@@ -19,15 +19,14 @@ function CartProduct({image,price,id,name,subtitle,hideButton})
   return (
     
       <Container fluid>
-      <div className="back ">
+      <div className="white product">
         <Row>
-          <Col md={2}>
+          <Col md={4}>
             <img src={image} className="cartpro__image" />
           </Col>
           <Col md={5}>
             <h6 className="mt-2">{name}</h6>
-            <p>{subtitle}</p>
-            <p><span className="bd">Price</span>{price}</p>
+            <p><span className="bd">Price ₹</span>{price}</p>
             {hideButton&&<Button color="secondary" variant="contained" onClick={remove}>Remove from cart</Button>}
             
           </Col>

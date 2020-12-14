@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Link, BrowserRouter as Router, Route, Switch ,useLocation} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -13,13 +13,11 @@ import Header from "./components/Header";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 import Contact from "./pages/Contact";
-import Checkout from "./pages/Checkout";
 import Payment from "./pages/Payment";
-
 import Orders from "./pages/Orders"
 import {loadStripe} from "@stripe/stripe-js"
 import {Elements} from "@stripe/react-stripe-js"
-
+import ScrollToTop from "./ScrollToTop"
 const promise=loadStripe("pk_test_51HtqcoILO5wYEeKPpQY6UD433VfSUD81oFqfqghBdqnVh73lMAU4r0KfyiOCwtgFYreWBI4mfZCEoGAO6ZFHqxnk008ZtBOCVE")
 
 function App() {
@@ -49,7 +47,8 @@ function App() {
 
   return (
     <div className='App'>
-      <Router>
+      <Router >
+        <ScrollToTop />
         <Switch>
           <Route path='/orders'>
             <Header />
@@ -67,7 +66,6 @@ function App() {
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/contact' component={Contact} />
-          <Route exact path='/checkout' component={Checkout} />
           <Route exact path='/discover'>
             <Header />
             <Discover />

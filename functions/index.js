@@ -20,7 +20,8 @@ app.get('/sand',(req,res)=>res.status(200).send('Hello sand'))
 
 app.post('/payments/create',async(request,response)=>{
   const total=request.query.total;
-  console.log("Payment request received for this amount>>>>",total)
+  if (total!=0)
+  {console.log("Payment request received for this amount>>>>",total)
   const paymentIntent=await stripe.paymentIntents.create({
     amount:total,
     currency:"inr",
@@ -29,8 +30,7 @@ app.post('/payments/create',async(request,response)=>{
   response.status(201).send({
     clientSecret:paymentIntent.client_secret,
   })
-
-  
+  }  
 })
 
 // Listen command

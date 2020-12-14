@@ -46,7 +46,8 @@ function ProductDisp({ match }) {
     });
 
   return (
-    <div style={{ background: "#13181f" }}>
+    // style={{ background: "#13181f" }}
+    <div >
       <Header />
       {console.log(basket)}
       <div
@@ -75,7 +76,7 @@ function ProductDisp({ match }) {
           <Col lg={3}>
             <Card className='text-center my-3 cd'>
               <CardContent className='buttonCardss'>
-                $ {data[w].price}
+              ₹ {data[w].price}
                 <br />
                 <Button
                   className='my-4'

@@ -4,7 +4,7 @@ import Products from "../components/Products";
 
 function Home() {
   return (
-    <div>
+    <div className="blue-grey lighten-5">
       <Banner />
       
       <Products />

@@ -11,7 +11,7 @@ import {
 } from "reactstrap";
 import "./Product.css";
 
-function Product({ image, price, desc, name, id, subtitle }) {
+function Product({ image, price, desc, name, id, subtitle,rating }) {
   return (
     // <div className='product'>
     //   <Link
@@ -55,7 +55,12 @@ function Product({ image, price, desc, name, id, subtitle }) {
         <div className="ml-3" style={{fontSize:"13px",textAlign:"left"}}>{subtitle}</div>
 
         {/* RATING */}
-        <div className="ml-3 " style={{textAlign:"left"}}><i class="material-icons" style={{color:"#ffd600",height:"15px"}}>star</i></div>
+
+        <div className="ml-3 " style={{textAlign:"left"}}>
+          {Array(rating).fill().map((_)=>(
+            <i class="material-icons" style={{color:"#ffd600",height:"15px"}}>star</i>
+
+          ))}</div>
 
         {/* PRICE */}
     <div className="ml-5 pb-3" style={{fontSize:"20px",textAlign:"left"}}>₹ {price}</div>

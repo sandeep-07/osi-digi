@@ -35,7 +35,7 @@ function Order({order,address}) {
                   value={order.data.amount/100}
                   thousandSeperator={true}
                   displayType={"text"}
-                  prefix={"$"}
+                  prefix={"₹"}
                 />
     </div>
   )

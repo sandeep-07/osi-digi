@@ -1,10 +1,11 @@
 const data = [
   {
     id: "0",
+    rating:5,
     image:
       "https://images.ctfassets.net/rporu91m20dc/5aPw1eUd6J5g49XbwxXKmb/fc396b6f4f60437fa2e5e4ca9083a05c/the-elder-scrolls--online--greymoor-hero-img?q=70&fm=webp",
     name: "The Elder Scrolls® Online: Greymoor",
-    price: 199,
+    price:2399,
     subtitle:
       "Celebrate people coming back to West Virginia with faction-themed cosmetics and C.A.M.P. items.",
     info:
@@ -28,10 +29,12 @@ const data = [
   },
   {
     id: "1",
+    rating:3,
     image:
       "https://lh3.googleusercontent.com/uYK6qVVc1NUqe6uMAjMsgEpaGYBebPJTFv3pHR5ccDMm5yf1BPDi72w5PzvJ5tTH2pvWAEfNITlSDyxO8IpxmaQ4dw",
     name: "Marvel Avengers",
-    price: 187,
+    price: 2999,
+    rating:2,
     subtitle: "Van Heusen Athleisure Men's Solid Regular Fit T-Shirt",
     info:
       "Reprise your role as a supernatural assassin in Dishonored 2 – the follow up to Arkane Studio's first-person action blockbuster and winner of more than 100 'Game of the Year' awards, Dishonored. Play your way in a world where mysticism and industry collide. Will you choose to play as Empress Emily Kaldwin or the royal protector, Corvo Attano? Will you make your way through the game unseen, make full use of its brutal combat system, or use a blend of both? How will you combine your character’s unique set of powers, weapons and gadgets to eliminate your enemies? The story responds to your choices, leading to intriguing outcomes, as you play through each of the game’s hand-crafted missions.",
@@ -53,7 +56,8 @@ const data = [
     image:
       "https://images.ctfassets.net/rporu91m20dc/4GSMaBEaadlFu4fhqtgVZc/b82d38220c047b6a8caac74a66cec855/fallout-76--wastelanders---raiders---settlers-content-bundle-hero-img?q=70&fm=webp",
     name: "Fallout 76: Wastelanders ",
-    price: 149,
+    price: 1490,
+    rating:4,
     subtitle:
       "Celebrate people coming back to West Virginia with faction-themed cosmetics and C.A.M.P. items.",
     info:
@@ -79,7 +83,8 @@ const data = [
     image:
       "https://images.ctfassets.net/rporu91m20dc/4fyPIj2zpEPPazHhMiaJ5M/c1093faf3ed923225169dd3b7b78d74b/prey-hero-img?q=70&fm=webp",
     name: "Prey",
-    price: 100,
+    price: 1000,
+    rating:5,
     subtitle: "Action",
     info:
       "In Prey, you awaken aboard Talos I, a space station orbiting the moon in the year 2032. You are the key subject of an experiment meant to alter humanity forever – but things have gone terribly wrong. The space station has been overrun by hostile aliens and you are now being hunted. As you dig into the dark secrets of Talos I and your own past, you must survive using the tools found on the station - your wits, weapons, and mind-bending abilities. The fate of the Talos I and everyone aboard is in your hands.",
@@ -103,7 +108,8 @@ const data = [
     image:
       "https://images.ctfassets.net/rporu91m20dc/4ciJFNSQJstpvQkQCegyKO/4fed4c993630d110641ae1310e3a694b/dishonored-2-hero-img?q=70&fm=webp",
     name: "Dishonored 2",
-    price: 109,
+    price: 1090,
+    rating:4,
     subtitle: "Action",
     info:
       "Reprise your role as a supernatural assassin in Dishonored 2 – the follow up to Arkane Studio's first-person action blockbuster and winner of more than 100 'Game of the Year' awards, Dishonored. Play your way in a world where mysticism and industry collide. Will you choose to play as Empress Emily Kaldwin or the royal protector, Corvo Attano? Will you make your way through the game unseen, make full use of its brutal combat system, or use a blend of both? How will you combine your character’s unique set of powers, weapons and gadgets to eliminate your enemies? The story responds to your choices, leading to intriguing outcomes, as you play through each of the game’s hand-crafted missions.",
@@ -125,7 +131,8 @@ const data = [
     image:
       "https://images.ctfassets.net/rporu91m20dc/2eNaUtYoVddlACnh6YtSxB/a7669a95b5c716d4721f462d4ebd25d9/the-evil-within-digital-deluxe-bundle-hero-img?q=70&fm=webp",
     name: "The Evil Within Digital Deluxe Bundle",
-    price: 199,
+    price: 1990,
+    rating:2,
     subtitle: "Survival Horror",
     info:
       "While investigating the scene of a gruesome mass murder, Detective Sebastian Castellanos and his partners encounter a mysterious and powerful force. After seeing the slaughter of fellow officers, Sebastian is ambushed and knocked unconscious. When he awakens, he finds himself in a deranged world where hideous creatures wander among the dead. Facing unimaginable terror, and fighting for survival, Sebastian embarks on a frightening journey to unravel what’s behind this evil force.",
@@ -150,7 +157,8 @@ const data = [
     image:
       "https://images.ctfassets.net/rporu91m20dc/7m4Lv9asbX5z9KoooQRkds/77755662546a5d8617a9976aeea6bf7e/wolfenstein-ii--the-new-colossus-hero-img?q=70&fm=webp",
     name: "Wolfenstein II: The New Colossus",
-    price: 199,
+    price: 1990,
+    rating:4,
     subtitle: "First-Person Shooter",
     info:
       "Wolfenstein® II: The New Colossus™ is the highly anticipated sequel to the critically acclaimed, Wolfenstein®: The New Order™ developed by the award-winning studio MachineGames. An exhilarating adventure brought to life by the industry-leading id Tech® 6, Wolfenstein® II sends players to Nazi-controlled America on a mission to recruit the boldest resistance leaders left. Fight the Nazis in iconic American locations, equip an arsenal of badass guns, and unleash new abilities to blast your way through legions of Nazi soldiers in this definitive first-person shooter. America, 1961. The Nazis maintain their stranglehold on the world. You are BJ Blazkowicz, aka “Terror-Billy,” member of the Resistance, scourge of the Nazi empire, and humanity’s last hope for liberty. Only you have the guts, guns, and gumption to return stateside, kill every Nazi in sight, and spark the second American Revolution.",
@@ -174,7 +182,8 @@ const data = [
     image:
       "https://images.ctfassets.net/rporu91m20dc/4ufmwKQfbRd4vRQ5ipoDQI/f712965379a9ed60e9cff78a56365843/quake-iii-arena-hero-img?q=70&fm=webp",
     name: "Quake III Arena",
-    price: 99,
+    price: 990,
+    rating:3,
     subtitle: "First-Person Shooter",
     info: "Release Date: Dec 5, 1999",
     description:

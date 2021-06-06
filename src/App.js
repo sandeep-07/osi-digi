@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import Discover from "./pages/Discover";
 import "./App.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 import Contact from "./pages/Contact";
@@ -55,26 +56,34 @@ function App() {
             <Orders/>
           </Route>
           <Route exact path='/'>
-          <Header />
+            <Header />
             <Home />
+            <Footer/>
           </Route>
           <Route exact path='/cart'>
             <Header />
             <Cart />
+            <Footer/>
           </Route>
           <Route exact path='/product/:id' component={ProductDisp} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
-          <Route exact path='/contact' component={Contact} />
+          <Route exact path='/contact'>
+            <Header/>
+            <Contact/>
+            <Footer/>
+          </Route>
           <Route exact path='/discover'>
             <Header />
             <Discover />
+            <Footer />
           </Route>
           <Route exact path='/payment'>
             <Header />
             <Elements stripe={promise}>
               <Payment />
             </Elements>
+            
           </Route>
           <Route exact path='*' component={NotFound} />
           <Route exact path='/nf' component={NotFound} />

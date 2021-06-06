@@ -18,6 +18,7 @@ function Products() {
                 name={pro.name}
                 price={pro.price}
                 subtitle={pro.subtitle}
+                rating={pro.rating}
               />
             </Col>
           ))}

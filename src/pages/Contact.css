@@ -1,19 +1,19 @@
 /* p {
   color: rgb(37, 226, 132);
 }
-#contacting {
+/* #contacting {
   border-radius: 50%;
   margin-top: -100px;
   margin-left: 30px;
   filter: contrast(100%);
   border: 6px solid rgb(37, 226, 132);
-}
+} */
 #h {
   margin-left: 40px;
   margin-top: -80px;
   color: white;
-}
-#h_ {
+} 
+/* #h_ {
   margin-left: 1000px;
   margin-top: -80px;
   color: white;
@@ -289,4 +289,244 @@ h4 {
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;
+} */ 
+
+.slideshow{
+  margin-bottom: 300px;
+} 
+
+.content{
+  margin:auto;
+  width:190px;
+  margin-top: 70px;
+  perspective:1000px;
+  position:relative;
+  padding-top:80px;
+}
+
+.content-carousel{
+  width: 100%;
+  position:absolute;
+  float: right;
+  animation: animate 15s infinite linear;
+  transform-style: preserve-3d;
+}
+.content-carousel:hover{
+  animation-play-state: paused;
+  cursor:pointer;
+
+}
+.content-carousel figure{
+  width:100%;
+  height:120px;
+  border: 1px solid #4d444d;
+  overflow: hidden;
+  position:absolute;
+}
+.content-carousel figure:nth-child(1){
+  transform: rotateY(0deg);
+  transform: translateZ(300px) ;
+}
+.content-carousel figure:nth-child(2){
+  transform: rotateY(40deg)
+   translateZ(300px) ;
+}
+.content-carousel figure:nth-child(3){
+  transform: rotateY(80deg)
+  translateZ(300px) ;
+}
+.content-carousel figure:nth-child(4){
+  transform: rotateY(120deg)
+   translateZ(300px) ;
+}
+.content-carousel figure:nth-child(5){
+  transform: rotateY(160deg)
+  translateZ(300px) ;
+}
+.content-carousel figure:nth-child(6){
+  transform: rotateY(200deg)
+  translateZ(300px) ;
+}
+.content-carousel figure:nth-child(7){
+  transform: rotateY(240deg) translateZ(300px) ;
+}
+.content-carousel figure:nth-child(8){
+  
+  transform: rotateY(280deg) translateZ(300px) ;
+}
+.content-carousel figure:nth-child(9){
+  
+  transform: rotateY(320deg) translateZ(300px) ;
+}
+/* .content-carousel figure:nth-child(10){
+  
+  transform: rotateY(320deg) translateZ(300px) ;
 } */
+
+.shadow{
+  position:absolute;
+  box-shadow: 0 0 20px 0 #000;
+  border-radius: 2px;
+}
+
+.content-carousel img{
+  image-rendering: auto;
+  transition: all 300ms;
+  width:100%;
+  height:100%;
+
+}
+.content-carousel img:hover{
+  transform: scale(1.2);
+  transition: all 300ms;
+}
+@keyframes animate{
+  from{
+    transform: rotateY(0deg);
+  }
+  to{
+    transform: rotateY(360deg);
+  }
+}
+
+.but{
+  height: 60px;
+  width: 150px;
+  background-color: rgb(194, 151, 10);
+  border: 2px solid black;
+  border-radius: 3px;
+}
+.but2{
+  height: 60px;
+  width: 150px;
+  background-color: rgb(38, 185, 243);
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.foot{
+  height: 250px;
+  width:100%;
+  background-color: rgb(72, 0, 139);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+}
+
+/* .foot{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+} */
+
+.co{
+  /* position:absolute; */
+  /* top:50%;
+  left:50%; */
+  /* top: 130px;
+  left:30px; */
+  transform: translate(-50%,-50%);
+  margin-left:150px;
+  margin-top: 40px;
+  padding:0;
+  display: flex;
+}
+
+.co li{
+  list-style:none;
+   
+}
+.co li a{
+
+  display:block;
+  position: relative;
+  width:70px;
+  height:90px;
+ 
+  font-size:40px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  margin:0 30px;
+  transition: .5s;
+}
+
+.co li a span{
+  position:absolute;
+  transition:transform .5s;
+
+}
+i.fa{
+  margin-top:32px;
+}
+.co ul li a span:nth-child(1),
+.co li a span:nth-child(3)
+{
+  width: 100%;
+  height:3px;
+  background: #fff;
+} 
+
+.co li a span:nth-child(1){
+  top:0;
+  left:0%;
+   transform-origin:right;
+}
+
+.co li a span:nth-child(3){
+  bottom:0;
+  left:0;
+  transform-origin:left;
+
+}
+.co li a:hover span:nth-child(3){
+  transform: scaleX(0);
+  transform-origin:right;
+  transition: transform .5s;
+} 
+
+.co ul li a span:nth-child(2),
+.co li a span:nth-child(4){
+  width: 3px;
+  height: 100%;
+  background: #fff;
+} 
+ .co li a:hover span:nth-child(2){
+  transform: scale(1);
+  transform-origin:top;
+  transition:transform .5s;
+} 
+
+.co li a:hover span:nth-child(4){
+  transform:scale(1);
+  transform-origin:bottom;
+  transition:transform .5s;
+} 
+.facebook:hover{
+  color:#3b5998;
+}
+.facebook:hover span{
+  background: #3b5998;
+}
+
+.instagram:hover{
+  color:#e0752de3;
+}
+.instagram:hover span{
+  background: #e0752de3;
+}
+
+.twitter:hover{
+  color: #1da1f2;
+}
+.twitter:hover span{
+  background: #1da1f2;
+}
+
+.info{
+  margin-top: 150px;
+  margin-left: -530px;
+  color: white;
+}

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/osi-digi/static/css/main.01e51f89.chunk.css",
+    "main.js": "/osi-digi/static/js/main.06720d89.chunk.js",
+    "main.js.map": "/osi-digi/static/js/main.06720d89.chunk.js.map",
+    "runtime-main.js": "/osi-digi/static/js/runtime-main.90e89661.js",
+    "runtime-main.js.map": "/osi-digi/static/js/runtime-main.90e89661.js.map",
+    "static/css/2.afb34292.chunk.css": "/osi-digi/static/css/2.afb34292.chunk.css",
+    "static/js/2.197910da.chunk.js": "/osi-digi/static/js/2.197910da.chunk.js",
+    "static/js/2.197910da.chunk.js.map": "/osi-digi/static/js/2.197910da.chunk.js.map",
+    "index.html": "/osi-digi/index.html",
+    "precache-manifest.aaf458a105a1ec019d6cd30e28e3808f.js": "/osi-digi/precache-manifest.aaf458a105a1ec019d6cd30e28e3808f.js",
+    "service-worker.js": "/osi-digi/service-worker.js",
+    "static/css/2.afb34292.chunk.css.map": "/osi-digi/static/css/2.afb34292.chunk.css.map",
+    "static/css/main.01e51f89.chunk.css.map": "/osi-digi/static/css/main.01e51f89.chunk.css.map",
+    "static/js/2.197910da.chunk.js.LICENSE.txt": "/osi-digi/static/js/2.197910da.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.90e89661.js",
+    "static/css/2.afb34292.chunk.css",
+    "static/js/2.197910da.chunk.js",
+    "static/css/main.01e51f89.chunk.css",
+    "static/js/main.06720d89.chunk.js"
+  ]
+}

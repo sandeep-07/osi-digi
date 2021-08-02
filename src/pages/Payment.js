@@ -20,7 +20,8 @@ function Payment() {
   //const [{ basket, user }, dispatch] = useStateValue();
   const [address,setAddress]=useState("")
 
-  useEffect(() => {
+  useEffect(() => 
+  {
     // generate speacial stripe secret which allows us to charge a customer
     const getClientSecret=async()=>{
       const response=await axios({
@@ -33,26 +34,15 @@ function Payment() {
     getClientSecret();
   }, [basket])
 
-  console.log("The secret is>>>>",clientSecret)
 
-  const stripe=useStripe()
-  const elements=useElements()
-
-  const handleSubmit=async (event)=>{
+  const handleSubmit = async (event) =>
+  {
     event.preventDefault()
-    setProcessing(true)
-    const payload=await stripe.confirmCardPayment(clientSecret,{
-      payment_method:{
-        card:elements.getElement(CardElement)
-      }
-    }).then(({paymentIntent})=>{
-      //paymentIntent = payment confirmation
-
-      db.collection('users').doc(user?.uid).collection('orders').doc(paymentIntent.id).set({
+    setProcessing(true)  
+    db.collection('users').doc(user?.uid).collection('orders').doc("111").set({
           basket:basket,
-          amount:paymentIntent.amount,
-          created:paymentIntent.created
-        })
+
+      })
       setSucceeded(true)
       setError(null)
       setProcessing(false)
@@ -60,9 +50,9 @@ function Payment() {
         type:"EMPTY_BASKET"
       })
       history.replace('/orders')
-    })
+    }
 
-  }
+  
   const handleChange=event=>{
     // listen to
     setDisabled(event.empty)
